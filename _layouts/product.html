@@ -36,10 +36,11 @@ layout: body
                 </article>
 
                 {% include buy_button.html product_page=page %}
+
+                <div class="product-content">
+                    {{ content }}
+                  </div><!-- .product-content -->
             </div>
-            <div class="product-content">
-                {{ content }}
-              </div><!-- .product-content -->
         </section>
 
         <section class="content__row">
