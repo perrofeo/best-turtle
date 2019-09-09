@@ -1,14 +1,19 @@
----
-layout: null
----
 
-window.onload = function () {
-  var script = document.createElement('script');
-  var firstScript = document.getElementsByTagName('script')[0];
-  script.async = true;
-  script.src = '{{'sw-register.js'|relative_url}}?v=' + Date.now();
-  firstScript.parentNode.insertBefore(script, firstScript);
-};
+//service worker
+if ("serviceWorker" in navigator) {
+  if (navigator.serviceWorker.controller) {
+    console.log("An active service worker found, no need to register");
+  } else {
+    // Register the service worker
+    navigator.serviceWorker
+      .register("/serviceworker.js", {
+        scope: "./"
+      })
+      .then(function (reg) {
+        console.log("Service worker has been registered for scope: " + reg.scope);
+      });
+  }
+}
 
 /*!
  * modernizr v3.6.0
