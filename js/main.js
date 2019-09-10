@@ -647,7 +647,7 @@ function startScroll() { document.body.style.overflow = 'initial' }
 let draggableItems = document.querySelectorAll('.product-grid--draggable')
 let lastCursorX = null
 draggableItems.forEach((element) => {
-  element.addEventListener("touchstart", elementStateHandler, false)
+  element.addEventListener("touchstart", elementStateHandler, {passive: true})
   element.addEventListener("touchend", elementStateHandler, false)
   element.addEventListener("touchmove", moveHandler, false)
 
