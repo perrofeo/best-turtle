@@ -648,7 +648,7 @@ let lastCursorX = null
 draggableItems.forEach((element) => {
   element.addEventListener("touchstart", elementStateHandler, {passive: true})
   element.addEventListener("touchend", elementStateHandler, false)
-  element.addEventListener("touchmove", moveHandler, false)
+  element.addEventListener("touchmove", moveHandler, {passive: true})
 
   element.isActive = false
   element.addEventListener("mousedown", elementStateHandler, false)
