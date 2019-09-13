@@ -465,6 +465,7 @@ models:
           - europe
           - bigplants
           - cactuses
+          - mani
       - type: boolean
         name: featured
         label: Featured
